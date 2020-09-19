@@ -1,0 +1,1 @@
+Tools for edit harvest moon message file format on 3ds platform (or using same message framework)

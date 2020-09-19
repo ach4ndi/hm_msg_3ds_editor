@@ -1,0 +1,657 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3C012EAF-F685-4CBD-8FC4-6BDD39AEE209}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BokujoMessage4</RootNamespace>
+    <AssemblyName>BokujoMessage4</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET40</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NET40</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus">
+      <HintPath>D:\Download\Archive\EPPlus 4.0.5\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Ookii.Dialogs">
+      <HintPath>D:\Download\Archive\Ookii.Dialogs\Ookii.Dialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="unvell.ReoGrid">
+      <HintPath>D:\Download\Archive\ReoGrid-1.3.0-All-Packages\ReoGrid-1.3.0-Release\unvell.ReoGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\Be.Windows.Forms.HexBox\BuiltInContextMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\Be.Windows.Forms.HexBox\ByteCharConverters.cs" />
+    <Compile Include="controls\Be.Windows.Forms.HexBox\ByteCollection.cs" />
+    <Compile Include="controls\Be.Windows.Forms.HexBox\BytePositionInfo.cs" />
+    <Compile Include="controls\Be.Windows.Forms.HexBox\DataBlock.cs" />
+    <Compile Include="controls\Be.Windows.Forms.HexBox\DataMap.cs" />
+    <Compile Include="controls\Be.Windows.Forms.HexBox\DynamicByteProvider.cs" />
+    <Compile Include="controls\Be.Windows.Forms.HexBox\DynamicFileByteProvider.cs" />
+    <Compile Include="controls\Be.Windows.Forms.HexBox\FileByteProvider.cs" />
+    <Compile Include="controls\Be.Windows.Forms.HexBox\FileDataBlock.cs" />
+    <Compile Include="controls\Be.Windows.Forms.HexBox\FindOptions.cs" />
+    <Compile Include="controls\Be.Windows.Forms.HexBox\HexBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\Be.Windows.Forms.HexBox\HexCasing.cs" />
+    <Compile Include="controls\Be.Windows.Forms.HexBox\IByteProvider.cs" />
+    <Compile Include="controls\Be.Windows.Forms.HexBox\MemoryDataBlock.cs" />
+    <Compile Include="controls\Be.Windows.Forms.HexBox\NativeMethods.cs" />
+    <Compile Include="controls\Be.Windows.Forms.HexBox\Properties\Resources.Designer.cs" />
+    <Compile Include="controls\Be.Windows.Forms.HexBox\Util.cs" />
+    <Compile Include="controls\Cyotek.Drawing.BitmapFont\BitmapFont.cs" />
+    <Compile Include="controls\Cyotek.Drawing.BitmapFont\BitmapFontLoader.cs" />
+    <Compile Include="controls\Cyotek.Drawing.BitmapFont\Character.cs" />
+    <Compile Include="controls\Cyotek.Drawing.BitmapFont\Kerning.cs" />
+    <Compile Include="controls\Cyotek.Drawing.BitmapFont\Padding.cs" />
+    <Compile Include="controls\Cyotek.Drawing.BitmapFont\Page.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\AdobeColorTablePaletteSerializer.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\AdobePhotoshopColorSwatchColorSpace.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\AdobePhotoshopColorSwatchFileVersion.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\AdobePhotoShopColorSwatchSerializer.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\ColorBarStyle.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\ColorCellBorderStyle.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\ColorCollection.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\ColorCollectionEventArgs.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\ColorCollectionSortOrder.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\ColorComparer.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\ColorEditingMode.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\ColorEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\ColorEditor.Designer.cs">
+      <DependentUpon>ColorEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\ColorEditorManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\ColorGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\ColorGridSelectedCellStyle.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\ColorHitTestInfo.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\ColorPalette.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\ColorPalettes.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\ColorPickerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\ColorPickerDialog.Designer.cs">
+      <DependentUpon>ColorPickerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\ColorSlider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\ColorSliderNubStyle.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\ColorSource.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\ColorWheel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\EditColorCancelEventArgs.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\EditColorEventArgs.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\GimpPaletteSerializer.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\HslColor.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\HsvColor.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\HueColorSlider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\IColorEditor.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\InterleavedBitmapPaletteSerializer.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\IPaletteSerializer.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\JascPaletteSerializer.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\LightnessColorSlider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\NativeMethods.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\NavigationOrigin.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\PaintNetPaletteSerializer.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\PaletteSerializer.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\Properties\Resources.Designer.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\RawPaletteSerializer.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\RgbaChannel.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\RgbaColorSlider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\SaturationColorSlider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\Cyotek.Windows.Forms.ColorPicker\ScreenColorPicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\Cyotek.Windows.Forms.ImageBox.Design\ImageBoxDesigner.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ImageBox\ImageBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\Cyotek.Windows.Forms.ImageBox\ImageBoxActionSources.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ImageBox\ImageBoxBorderStyle.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ImageBox\ImageBoxCancelEventArgs.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ImageBox\ImageBoxGridDisplayMode.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ImageBox\ImageBoxGridScale.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ImageBox\ImageBoxMouseWheelMessageFilter.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ImageBox\ImageBoxNativeMethods.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ImageBox\ImageBoxSelectionMode.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ImageBox\ImageBoxSizeMode.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ImageBox\ImageBoxZoomActions.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ImageBox\ImageBoxZoomEventArgs.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ImageBox\ScrollControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\Cyotek.Windows.Forms.ImageBox\ScrollProperties.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\Cyotek.Windows.Forms.ImageBox\VirtualScrollableControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\Cyotek.Windows.Forms.ImageBox\ZoomLevelCollection.cs" />
+    <Compile Include="controls\Cyotek.Windows.Forms.ImageBox\ZoomLevelCollectionConverter.cs" />
+    <Compile Include="controls\FastColoredTextBox\AutocompleteItem.cs" />
+    <Compile Include="controls\FastColoredTextBox\AutocompleteMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\FastColoredTextBox\Bookmarks.cs" />
+    <Compile Include="controls\FastColoredTextBox\Char.cs" />
+    <Compile Include="controls\FastColoredTextBox\CommandManager.cs" />
+    <Compile Include="controls\FastColoredTextBox\Commands.cs" />
+    <Compile Include="controls\FastColoredTextBox\DocumentMap.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\FastColoredTextBox\EncodingDetector.cs" />
+    <Compile Include="controls\FastColoredTextBox\ExportToHTML.cs" />
+    <Compile Include="controls\FastColoredTextBox\ExportToRTF.cs" />
+    <Compile Include="controls\FastColoredTextBox\FastColoredTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\FastColoredTextBox\FileTextSource.cs" />
+    <Compile Include="controls\FastColoredTextBox\FindForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controls\FastColoredTextBox\FindForm.Designer.cs">
+      <DependentUpon>FindForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\FastColoredTextBox\GoToForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controls\FastColoredTextBox\GoToForm.Designer.cs">
+      <DependentUpon>GoToForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\FastColoredTextBox\Hints.cs" />
+    <Compile Include="controls\FastColoredTextBox\Hotkeys.cs" />
+    <Compile Include="controls\FastColoredTextBox\HotkeysEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controls\FastColoredTextBox\HotkeysEditorForm.Designer.cs">
+      <DependentUpon>HotkeysEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\FastColoredTextBox\LimitedStack.cs" />
+    <Compile Include="controls\FastColoredTextBox\Line.cs" />
+    <Compile Include="controls\FastColoredTextBox\LinesAccessor.cs" />
+    <Compile Include="controls\FastColoredTextBox\MacrosManager.cs" />
+    <Compile Include="controls\FastColoredTextBox\Place.cs" />
+    <Compile Include="controls\FastColoredTextBox\PlatformType.cs" />
+    <Compile Include="controls\FastColoredTextBox\Range.cs" />
+    <Compile Include="controls\FastColoredTextBox\ReplaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="controls\FastColoredTextBox\ReplaceForm.Designer.cs">
+      <DependentUpon>ReplaceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\FastColoredTextBox\Ruler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\FastColoredTextBox\Ruler.Designer.cs">
+      <DependentUpon>Ruler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controls\FastColoredTextBox\Style.cs" />
+    <Compile Include="controls\FastColoredTextBox\SyntaxDescriptor.cs" />
+    <Compile Include="controls\FastColoredTextBox\SyntaxHighlighter.cs" />
+    <Compile Include="controls\FastColoredTextBox\TextSource.cs" />
+    <Compile Include="controls\FastColoredTextBox\TypeDescriptor.cs" />
+    <Compile Include="controls\FastColoredTextBox\UnfocusablePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\FastColoredTextBox\VisualMarker.cs" />
+    <Compile Include="controls\jsonnet\Bson\BsonBinaryType.cs" />
+    <Compile Include="controls\jsonnet\Bson\BsonBinaryWriter.cs" />
+    <Compile Include="controls\jsonnet\Bson\BsonObjectId.cs" />
+    <Compile Include="controls\jsonnet\Bson\BsonReader.cs" />
+    <Compile Include="controls\jsonnet\Bson\BsonToken.cs" />
+    <Compile Include="controls\jsonnet\Bson\BsonType.cs" />
+    <Compile Include="controls\jsonnet\Bson\BsonWriter.cs" />
+    <Compile Include="controls\jsonnet\ConstructorHandling.cs" />
+    <Compile Include="controls\jsonnet\Converters\BinaryConverter.cs" />
+    <Compile Include="controls\jsonnet\Converters\BsonObjectIdConverter.cs" />
+    <Compile Include="controls\jsonnet\Converters\CustomCreationConverter.cs" />
+    <Compile Include="controls\jsonnet\Converters\DataSetConverter.cs" />
+    <Compile Include="controls\jsonnet\Converters\DataTableConverter.cs" />
+    <Compile Include="controls\jsonnet\Converters\DateTimeConverterBase.cs" />
+    <Compile Include="controls\jsonnet\Converters\DiscriminatedUnionConverter.cs" />
+    <Compile Include="controls\jsonnet\Converters\EntityKeyMemberConverter.cs" />
+    <Compile Include="controls\jsonnet\Converters\ExpandoObjectConverter.cs" />
+    <Compile Include="controls\jsonnet\Converters\IsoDateTimeConverter.cs" />
+    <Compile Include="controls\jsonnet\Converters\JavaScriptDateTimeConverter.cs" />
+    <Compile Include="controls\jsonnet\Converters\JsonValueConverter.cs" />
+    <Compile Include="controls\jsonnet\Converters\KeyValuePairConverter.cs" />
+    <Compile Include="controls\jsonnet\Converters\RegexConverter.cs" />
+    <Compile Include="controls\jsonnet\Converters\StringEnumConverter.cs" />
+    <Compile Include="controls\jsonnet\Converters\VersionConverter.cs" />
+    <Compile Include="controls\jsonnet\Converters\XmlNodeConverter.cs" />
+    <Compile Include="controls\jsonnet\DateFormatHandling.cs" />
+    <Compile Include="controls\jsonnet\DateParseHandling.cs" />
+    <Compile Include="controls\jsonnet\DateTimeZoneHandling.cs" />
+    <Compile Include="controls\jsonnet\DefaultValueHandling.cs" />
+    <Compile Include="controls\jsonnet\FloatFormatHandling.cs" />
+    <Compile Include="controls\jsonnet\FloatParseHandling.cs" />
+    <Compile Include="controls\jsonnet\FormatterAssemblyStyle.cs" />
+    <Compile Include="controls\jsonnet\Formatting.cs" />
+    <Compile Include="controls\jsonnet\IArrayPool.cs" />
+    <Compile Include="controls\jsonnet\IJsonLineInfo.cs" />
+    <Compile Include="controls\jsonnet\JsonArrayAttribute.cs" />
+    <Compile Include="controls\jsonnet\JsonConstructorAttribute.cs" />
+    <Compile Include="controls\jsonnet\JsonContainerAttribute.cs" />
+    <Compile Include="controls\jsonnet\JsonConvert.cs" />
+    <Compile Include="controls\jsonnet\JsonConverter.cs" />
+    <Compile Include="controls\jsonnet\JsonConverterAttribute.cs" />
+    <Compile Include="controls\jsonnet\JsonConverterCollection.cs" />
+    <Compile Include="controls\jsonnet\JsonDictionaryAttribute.cs" />
+    <Compile Include="controls\jsonnet\JsonException.cs" />
+    <Compile Include="controls\jsonnet\JsonExtensionDataAttribute.cs" />
+    <Compile Include="controls\jsonnet\JsonIgnoreAttribute.cs" />
+    <Compile Include="controls\jsonnet\JsonObjectAttribute.cs" />
+    <Compile Include="controls\jsonnet\JsonPosition.cs" />
+    <Compile Include="controls\jsonnet\JsonPropertyAttribute.cs" />
+    <Compile Include="controls\jsonnet\JsonReader.cs" />
+    <Compile Include="controls\jsonnet\JsonReaderException.cs" />
+    <Compile Include="controls\jsonnet\JsonRequiredAttribute.cs" />
+    <Compile Include="controls\jsonnet\JsonSerializationException.cs" />
+    <Compile Include="controls\jsonnet\JsonSerializer.cs" />
+    <Compile Include="controls\jsonnet\JsonSerializerSettings.cs" />
+    <Compile Include="controls\jsonnet\JsonTextReader.cs" />
+    <Compile Include="controls\jsonnet\JsonTextWriter.cs" />
+    <Compile Include="controls\jsonnet\JsonToken.cs" />
+    <Compile Include="controls\jsonnet\JsonValidatingReader.cs" />
+    <Compile Include="controls\jsonnet\JsonWriter.cs" />
+    <Compile Include="controls\jsonnet\JsonWriterException.cs" />
+    <Compile Include="controls\jsonnet\Linq\CommentHandling.cs" />
+    <Compile Include="controls\jsonnet\Linq\Extensions.cs" />
+    <Compile Include="controls\jsonnet\Linq\IJEnumerable.cs" />
+    <Compile Include="controls\jsonnet\Linq\JArray.cs" />
+    <Compile Include="controls\jsonnet\Linq\JConstructor.cs" />
+    <Compile Include="controls\jsonnet\Linq\JContainer.cs" />
+    <Compile Include="controls\jsonnet\Linq\JEnumerable.cs" />
+    <Compile Include="controls\jsonnet\Linq\JObject.cs" />
+    <Compile Include="controls\jsonnet\Linq\JProperty.cs" />
+    <Compile Include="controls\jsonnet\Linq\JPropertyDescriptor.cs" />
+    <Compile Include="controls\jsonnet\Linq\JPropertyKeyedCollection.cs" />
+    <Compile Include="controls\jsonnet\Linq\JRaw.cs" />
+    <Compile Include="controls\jsonnet\Linq\JsonLoadSettings.cs" />
+    <Compile Include="controls\jsonnet\Linq\JsonMergeSettings.cs" />
+    <Compile Include="controls\jsonnet\Linq\JsonPath\ArrayIndexFilter.cs" />
+    <Compile Include="controls\jsonnet\Linq\JsonPath\ArrayMultipleIndexFilter.cs" />
+    <Compile Include="controls\jsonnet\Linq\JsonPath\ArraySliceFilter.cs" />
+    <Compile Include="controls\jsonnet\Linq\JsonPath\FieldFilter.cs" />
+    <Compile Include="controls\jsonnet\Linq\JsonPath\FieldMultipleFilter.cs" />
+    <Compile Include="controls\jsonnet\Linq\JsonPath\JPath.cs" />
+    <Compile Include="controls\jsonnet\Linq\JsonPath\PathFilter.cs" />
+    <Compile Include="controls\jsonnet\Linq\JsonPath\QueryExpression.cs" />
+    <Compile Include="controls\jsonnet\Linq\JsonPath\QueryFilter.cs" />
+    <Compile Include="controls\jsonnet\Linq\JsonPath\ScanFilter.cs" />
+    <Compile Include="controls\jsonnet\Linq\JToken.cs" />
+    <Compile Include="controls\jsonnet\Linq\JTokenEqualityComparer.cs" />
+    <Compile Include="controls\jsonnet\Linq\JTokenReader.cs" />
+    <Compile Include="controls\jsonnet\Linq\JTokenType.cs" />
+    <Compile Include="controls\jsonnet\Linq\JTokenWriter.cs" />
+    <Compile Include="controls\jsonnet\Linq\JValue.cs" />
+    <Compile Include="controls\jsonnet\Linq\MergeArrayHandling.cs" />
+    <Compile Include="controls\jsonnet\MemberSerialization.cs" />
+    <Compile Include="controls\jsonnet\MetadataPropertyHandling.cs" />
+    <Compile Include="controls\jsonnet\MissingMemberHandling.cs" />
+    <Compile Include="controls\jsonnet\NullValueHandling.cs" />
+    <Compile Include="controls\jsonnet\ObjectCreationHandling.cs" />
+    <Compile Include="controls\jsonnet\PreserveReferencesHandling.cs" />
+    <Compile Include="controls\jsonnet\ReferenceLoopHandling.cs" />
+    <Compile Include="controls\jsonnet\Required.cs" />
+    <Compile Include="controls\jsonnet\Schema\Extensions.cs" />
+    <Compile Include="controls\jsonnet\Schema\JsonSchema.cs" />
+    <Compile Include="controls\jsonnet\Schema\JsonSchemaBuilder.cs" />
+    <Compile Include="controls\jsonnet\Schema\JsonSchemaConstants.cs" />
+    <Compile Include="controls\jsonnet\Schema\JsonSchemaException.cs" />
+    <Compile Include="controls\jsonnet\Schema\JsonSchemaGenerator.cs" />
+    <Compile Include="controls\jsonnet\Schema\JsonSchemaModel.cs" />
+    <Compile Include="controls\jsonnet\Schema\JsonSchemaModelBuilder.cs" />
+    <Compile Include="controls\jsonnet\Schema\JsonSchemaNode.cs" />
+    <Compile Include="controls\jsonnet\Schema\JsonSchemaNodeCollection.cs" />
+    <Compile Include="controls\jsonnet\Schema\JsonSchemaResolver.cs" />
+    <Compile Include="controls\jsonnet\Schema\JsonSchemaType.cs" />
+    <Compile Include="controls\jsonnet\Schema\JsonSchemaWriter.cs" />
+    <Compile Include="controls\jsonnet\Schema\UndefinedSchemaIdHandling.cs" />
+    <Compile Include="controls\jsonnet\Schema\ValidationEventArgs.cs" />
+    <Compile Include="controls\jsonnet\Schema\ValidationEventHandler.cs" />
+    <Compile Include="controls\jsonnet\SerializationBinder.cs" />
+    <Compile Include="controls\jsonnet\Serialization\CachedAttributeGetter.cs" />
+    <Compile Include="controls\jsonnet\Serialization\CamelCasePropertyNamesContractResolver.cs" />
+    <Compile Include="controls\jsonnet\Serialization\DefaultContractResolver.cs" />
+    <Compile Include="controls\jsonnet\Serialization\DefaultReferenceResolver.cs" />
+    <Compile Include="controls\jsonnet\Serialization\DefaultSerializationBinder.cs" />
+    <Compile Include="controls\jsonnet\Serialization\DiagnosticsTraceWriter.cs" />
+    <Compile Include="controls\jsonnet\Serialization\DynamicValueProvider.cs" />
+    <Compile Include="controls\jsonnet\Serialization\ErrorContext.cs" />
+    <Compile Include="controls\jsonnet\Serialization\ErrorEventArgs.cs" />
+    <Compile Include="controls\jsonnet\Serialization\ExpressionValueProvider.cs" />
+    <Compile Include="controls\jsonnet\Serialization\IAttributeProvider.cs" />
+    <Compile Include="controls\jsonnet\Serialization\IContractResolver.cs" />
+    <Compile Include="controls\jsonnet\Serialization\IReferenceResolver.cs" />
+    <Compile Include="controls\jsonnet\Serialization\ITraceWriter.cs" />
+    <Compile Include="controls\jsonnet\Serialization\IValueProvider.cs" />
+    <Compile Include="controls\jsonnet\Serialization\JsonArrayContract.cs" />
+    <Compile Include="controls\jsonnet\Serialization\JsonContainerContract.cs" />
+    <Compile Include="controls\jsonnet\Serialization\JsonContract.cs" />
+    <Compile Include="controls\jsonnet\Serialization\JsonDictionaryContract.cs" />
+    <Compile Include="controls\jsonnet\Serialization\JsonDynamicContract.cs" />
+    <Compile Include="controls\jsonnet\Serialization\JsonFormatterConverter.cs" />
+    <Compile Include="controls\jsonnet\Serialization\JsonISerializableContract.cs" />
+    <Compile Include="controls\jsonnet\Serialization\JsonLinqContract.cs" />
+    <Compile Include="controls\jsonnet\Serialization\JsonObjectContract.cs" />
+    <Compile Include="controls\jsonnet\Serialization\JsonPrimitiveContract.cs" />
+    <Compile Include="controls\jsonnet\Serialization\JsonProperty.cs" />
+    <Compile Include="controls\jsonnet\Serialization\JsonPropertyCollection.cs" />
+    <Compile Include="controls\jsonnet\Serialization\JsonSerializerInternalBase.cs" />
+    <Compile Include="controls\jsonnet\Serialization\JsonSerializerInternalReader.cs" />
+    <Compile Include="controls\jsonnet\Serialization\JsonSerializerInternalWriter.cs" />
+    <Compile Include="controls\jsonnet\Serialization\JsonSerializerProxy.cs" />
+    <Compile Include="controls\jsonnet\Serialization\JsonStringContract.cs" />
+    <Compile Include="controls\jsonnet\Serialization\JsonTypeReflector.cs" />
+    <Compile Include="controls\jsonnet\Serialization\MemoryTraceWriter.cs" />
+    <Compile Include="controls\jsonnet\Serialization\ObjectConstructor.cs" />
+    <Compile Include="controls\jsonnet\Serialization\OnErrorAttribute.cs" />
+    <Compile Include="controls\jsonnet\Serialization\ReflectionAttributeProvider.cs" />
+    <Compile Include="controls\jsonnet\Serialization\ReflectionValueProvider.cs" />
+    <Compile Include="controls\jsonnet\Serialization\TraceJsonReader.cs" />
+    <Compile Include="controls\jsonnet\Serialization\TraceJsonWriter.cs" />
+    <Compile Include="controls\jsonnet\StringEscapeHandling.cs" />
+    <Compile Include="controls\jsonnet\TraceLevel.cs" />
+    <Compile Include="controls\jsonnet\TypeNameHandling.cs" />
+    <Compile Include="controls\jsonnet\Utilities\Base64Encoder.cs" />
+    <Compile Include="controls\jsonnet\Utilities\BidirectionalDictionary.cs" />
+    <Compile Include="controls\jsonnet\Utilities\CollectionUtils.cs" />
+    <Compile Include="controls\jsonnet\Utilities\CollectionWrapper.cs" />
+    <Compile Include="controls\jsonnet\Utilities\ConvertUtils.cs" />
+    <Compile Include="controls\jsonnet\Utilities\DateTimeParser.cs" />
+    <Compile Include="controls\jsonnet\Utilities\DateTimeUtils.cs" />
+    <Compile Include="controls\jsonnet\Utilities\DictionaryWrapper.cs" />
+    <Compile Include="controls\jsonnet\Utilities\DynamicProxy.cs" />
+    <Compile Include="controls\jsonnet\Utilities\DynamicProxyMetaObject.cs" />
+    <Compile Include="controls\jsonnet\Utilities\DynamicReflectionDelegateFactory.cs" />
+    <Compile Include="controls\jsonnet\Utilities\DynamicUtils.cs" />
+    <Compile Include="controls\jsonnet\Utilities\EnumUtils.cs" />
+    <Compile Include="controls\jsonnet\Utilities\EnumValue.cs" />
+    <Compile Include="controls\jsonnet\Utilities\ExpressionReflectionDelegateFactory.cs" />
+    <Compile Include="controls\jsonnet\Utilities\FSharpUtils.cs" />
+    <Compile Include="controls\jsonnet\Utilities\ILGeneratorExtensions.cs" />
+    <Compile Include="controls\jsonnet\Utilities\ImmutableCollectionsUtils.cs" />
+    <Compile Include="controls\jsonnet\Utilities\JavaScriptUtils.cs" />
+    <Compile Include="controls\jsonnet\Utilities\JsonTokenUtils.cs" />
+    <Compile Include="controls\jsonnet\Utilities\LateBoundReflectionDelegateFactory.cs" />
+    <Compile Include="controls\jsonnet\Utilities\LinqBridge.cs" />
+    <Compile Include="controls\jsonnet\Utilities\MathUtils.cs" />
+    <Compile Include="controls\jsonnet\Utilities\MethodCall.cs" />
+    <Compile Include="controls\jsonnet\Utilities\MiscellaneousUtils.cs" />
+    <Compile Include="controls\jsonnet\Utilities\PropertyNameTable.cs" />
+    <Compile Include="controls\jsonnet\Utilities\ReflectionDelegateFactory.cs" />
+    <Compile Include="controls\jsonnet\Utilities\ReflectionObject.cs" />
+    <Compile Include="controls\jsonnet\Utilities\ReflectionUtils.cs" />
+    <Compile Include="controls\jsonnet\Utilities\StringBuffer.cs" />
+    <Compile Include="controls\jsonnet\Utilities\StringReference.cs" />
+    <Compile Include="controls\jsonnet\Utilities\StringUtils.cs" />
+    <Compile Include="controls\jsonnet\Utilities\ThreadSafeStore.cs" />
+    <Compile Include="controls\jsonnet\Utilities\TypeExtensions.cs" />
+    <Compile Include="controls\jsonnet\Utilities\ValidationUtils.cs" />
+    <Compile Include="controls\jsonnet\WriteState.cs" />
+    <Compile Include="controls\UxTabControlCS\GdiMemoryContext.cs" />
+    <Compile Include="controls\UxTabControlCS\UxTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\UxTabControlCS\UxTabControl.NativeUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="appconfig.cs" />
+    <Compile Include="enum.cs" />
+    <Compile Include="Format\crypto\ChaCha20Cipher.cs" />
+    <Compile Include="Format\crypto\Salsa20.cs" />
+    <Compile Include="Format\gformat\ppItemData.cs" />
+    <Compile Include="Format\gformat\uniConfigSOS2JP.cs" />
+    <Compile Include="Format\msg4u.cs" />
+    <Compile Include="Format\msg4.cs" />
+    <Compile Include="Format\Archive\papa.cs" />
+    <Compile Include="Format\Archive\xbb.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="uForm\mFrm\ppItemData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="uForm\mFrm\ppItemData.Designer.cs">
+      <DependentUpon>ppItemData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uForm\uInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="uForm\uInformation.Designer.cs">
+      <DependentUpon>uInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uForm\uPPfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="uForm\uPPfile.Designer.cs">
+      <DependentUpon>uPPfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uForm\uSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="uForm\uSheet.Designer.cs">
+      <DependentUpon>uSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uForm\uUniCon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="uForm\uUniCon.Designer.cs">
+      <DependentUpon>uUniCon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uForm\mFrm\uXBB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="uForm\mFrm\uXBB.Designer.cs">
+      <DependentUpon>uXBB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\Be.Windows.Forms.HexBox\HexBox.resx">
+      <DependentUpon>HexBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\Be.Windows.Forms.HexBox\Properties\Resources.resx" />
+    <EmbeddedResource Include="controls\Cyotek.Windows.Forms.ColorPicker\ColorEditor.resx">
+      <DependentUpon>ColorEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\Cyotek.Windows.Forms.ColorPicker\ColorPickerDialog.resx">
+      <DependentUpon>ColorPickerDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\Cyotek.Windows.Forms.ColorPicker\Properties\Resources.resx" />
+    <EmbeddedResource Include="controls\FastColoredTextBox\FastColoredTextBox.resx">
+      <DependentUpon>FastColoredTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\FastColoredTextBox\FindForm.resx">
+      <DependentUpon>FindForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\FastColoredTextBox\GoToForm.resx">
+      <DependentUpon>GoToForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\FastColoredTextBox\HotkeysEditorForm.resx">
+      <DependentUpon>HotkeysEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\FastColoredTextBox\ReplaceForm.resx">
+      <DependentUpon>ReplaceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="uForm\mFrm\ppItemData.resx">
+      <DependentUpon>ppItemData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uForm\uInformation.resx">
+      <DependentUpon>uInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uForm\uPPfile.resx">
+      <DependentUpon>uPPfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uForm\uSheet.resx">
+      <DependentUpon>uSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uForm\uUniCon.resx">
+      <DependentUpon>uUniCon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uForm\mFrm\uXBB.resx">
+      <DependentUpon>uXBB.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="controls\Be.Windows.Forms.HexBox\HexBox.snk" />
+    <None Include="controls\Cyotek.Drawing.BitmapFont\cyopublic.snk" />
+    <None Include="controls\Cyotek.Windows.Forms.ColorPicker\cyopublic.snk" />
+    <None Include="controls\Cyotek.Windows.Forms.ImageBox\cyopublic.snk" />
+    <None Include="controls\FastColoredTextBox\FCTB_key.snk" />
+    <None Include="controls\FastColoredTextBox\SyntaxHighlighter.cs.old" />
+    <None Include="controls\UxTabControlCS\uxtabkey.snk" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z1e1yxC-elegant-wallpapers.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="controls\Be.Windows.Forms.HexBox\Be.Windows.Forms.HexBox.csproj" />
+    <Content Include="controls\Be.Windows.Forms.HexBox\HexBox.bmp" />
+    <Content Include="controls\Cyotek.Windows.Forms.ColorPicker\Resources\cellbackground.png" />
+    <Content Include="controls\Cyotek.Windows.Forms.ColorPicker\Resources\eyedropper.cur" />
+    <Content Include="controls\Cyotek.Windows.Forms.ColorPicker\Resources\eyedropper.png" />
+    <Content Include="controls\Cyotek.Windows.Forms.ColorPicker\Resources\palette-load.png" />
+    <Content Include="controls\Cyotek.Windows.Forms.ColorPicker\Resources\palette-save.png" />
+    <Content Include="controls\Cyotek.Windows.Forms.ImageBox\ImageBox.bmp" />
+    <Content Include="controls\UxTabControlCS\UxTabControlCS.csproj" />
+    <Content Include="icon.ico" />
+    <None Include="Resources\sos2_bg_5.png" />
+    <None Include="Resources\sos2_bg_4.png" />
+    <None Include="Resources\sos2_bg_3.png" />
+    <None Include="Resources\sos2_bg_2.png" />
+    <None Include="Resources\sos2_bg_1.png" />
+    <None Include="Resources\anb_bg_0.png" />
+    <None Include="Resources\anb_bg_1.png" />
+    <None Include="Resources\anb_bg_2.png" />
+    <None Include="Resources\anb_bg_3.png" />
+    <None Include="Resources\anb_bg_4.png" />
+    <None Include="Resources\anb_bg_5.png" />
+    <None Include="Resources\anb_bg_6.png" />
+    <None Include="Resources\anb_bg_7.png" />
+    <None Include="Resources\anb_bg_8.png" />
+    <None Include="Resources\anb_bg_9.png" />
+    <None Include="Resources\anb_bg_10.png" />
+    <None Include="Resources\anb_bg_11.png" />
+    <None Include="Resources\box-medium.png" />
+    <None Include="Resources\box.png" />
+    <Content Include="Resources\cellbackground.png" />
+    <Content Include="Resources\eyedropper.cur" />
+    <Content Include="Resources\eyedropper.png" />
+    <None Include="Resources\gear.png" />
+    <None Include="Resources\occluder.png" />
+    <Content Include="Resources\palette-load.png" />
+    <Content Include="Resources\palette-save.png" />
+    <None Include="Resources\information-italic.png" />
+    <None Include="Resources\document-import.png" />
+    <None Include="Resources\document-list.png" />
+    <None Include="Resources\document-export.png" />
+    <None Include="Resources\document--arrow.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\minus.png" />
+    <None Include="Resources\document-bookmark.png" />
+    <None Include="Resources\document--pencil.png" />
+    <None Include="Resources\disk.png" />
+    <None Include="Resources\folder.png" />
+    <None Include="Resources\icon_a_08.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
